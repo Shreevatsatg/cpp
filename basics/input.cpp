@@ -6,5 +6,5 @@ int main(){
     cout <<"enter tha number\n";
     cin >>a;
     cout <<"your answer is "<<a;
-
+    return 0;
 }
