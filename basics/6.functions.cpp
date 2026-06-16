@@ -1,4 +1,3 @@
-//lecture 5 start
 #include<iostream>
 using namespace std;
 
