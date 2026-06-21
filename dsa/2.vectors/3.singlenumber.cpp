@@ -1,16 +1,18 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-//remove all the unique values and keep the 1 non unique value
+// remove all the unique values and keep the 1 non unique value
 
-int main(){
-//xor(^) returns 0 when 2 elements are same
-vector <int> vec={1,2,1,2,3};
-int ans =0;
-    for (int val:vec){
-        ans =ans^val; //ans ^=val;
+int main()
+{
+    // xor(^) returns 0 when 2 elements are same
+    vector<int> vec = {1, 2, 1, 2, 3};
+    int ans = 0;
+    for (int val : vec)
+    {
+        ans = ans ^ val; // ans ^=val;
     }
-    
-    cout<<ans;
+
+    cout << ans;
     return 0;
-} 
+}
