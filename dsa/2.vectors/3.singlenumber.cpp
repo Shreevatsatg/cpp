@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 // remove all the unique values and keep the 1 non unique value
-
+//solve problem number 136(single NUmber) on leetcode
 int main()
 {
     // xor(^) returns 0 when 2 elements are same
