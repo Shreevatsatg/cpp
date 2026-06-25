@@ -1,0 +1,232 @@
+      time and space complexity
+
+
+1. space complexity:
+
+=>space complexity is not the actual space but the amount of space taken by an algoritm as function of inout size(n)
+
+
+2. time complexity:
+
+=>time complexity is not the actual time taken.. but the amount of time taken as function of input size (n)
+=> in time complexity we take worst case as the base(the algorithm may solve faster because of best case)
+O(n) ->leanior time complexity (ex: linear search for n input it runs n times)
+
+to find time complexity of : f(n)=4n^2 +3n+5
+1st ->egnore Constants =(f(n)=n^2+n)
+2nd->take the biggest term(f(n)=n^2 (O(n^2)))
+
+=>different notations:
+
+worst case = O(big O) -> only focus on big O for placements
+average case = (theta)
+best case = (omega)
+
+
+
+=> types of time complexity (best to worst)
+
+1. O(1) -> constant  to any input size (best)
+2. O(log n) 
+3. O(n)
+4. O(n log n)
+5. O(n^2)
+6. O(x^3)
+7. O(2^x)
+8. O(n!)
+
+=>common time complexities:
+
+1. O(1) : constant Time irrespective of input
+
+ex: sum of numbers from 1 to N
+
+int n;
+cin >>n;
+int ans =n*(n+1)/2;
+
+2. O(n) : linear time complexity (same as number of inputs)
+
+ex: for loop(factorial)
+
+int fact=1;
+for(int i=1;i<=n; i++){
+      fact *=i;
+}
+
+3. O(n^2) & O(n^3) : quadratic / cubic time complexity (for each n  operations there is another n times for each , inside nested loops)
+
+note : for O(n^3) we usually have 3 nested loops
+
+ex: nested loops(bubble sort)
+
+for(int i=0;i<=n;i++){
+for(int j=0;j<=n-i-1;i++>){
+      if(arr[j]>arr[j+1]){
+            swap(arr[j]),arr[j+1]);
+            }
+      }
+}
+
+4. O(logn) : very close to contant because log in small difference 
+
+ex: binary search(search space becomes half each time)
+
+5. O(n log n) : log n for each n inputs 
+
+ex: merge sort, quick sort
+
+6. O(2^n) : recursion (brute force)
+
+7. O(n!): (worst of all)
+
+ex: traveling salesman problem (TSP)
+
+=> problems:
+
+1. find time complexity of finding prime number?
+
+for(int i=2; i*i<=n ;i++ ){
+      if(n%i==0){
+      cout<<"non prime;
+      break;
+      }
+}
+
+-> i starts from 2 to i^2<=n there fore loop runs from 2 to root(n) 
+therefore timecomplexity =O(root(n))
+
+2. find time complexity for selection sort?
+
+for (int i=0;i<=n-1; i++){
+      int minid =i;
+      for (int j=i+1;j<n;j++){
+            if(arr[j]<arr[minidx])){
+                  minid=j;
+            }
+      }
+}
+swap(arr[i],arr[minidx]);
+}
+
+->for each i  value j  value runs n times so its O(n^2)
+
+
+=> Recursion:
+
+->Time Complexity:
+
+1. using recursive relation(more mathamatical)
+
+ex: for factorial algorithm
+
+ int factorial(int n){
+      if(n ==0){
+            retun 1;
+      }
+      return n*factorial(n-1);
+ }
+
+ -> f(n) = k+f(n-1)
+ = f(n) =k*n+k2
+ = tc = O(n)
+
+ 
+2. using total number of recursive calls * work in each call(most usedd)
+(using recursive tree)
+
+ex: for factorial algorithm
+
+int factorial(int n){
+      if(n ==0){
+            retun 1;
+      }
+      return n*factorial(n-1);
+ }
+
+ recursive tree: f(4)->f(3)->f(2)->f(1)->f(0)
+ so n calls = n* work in each call
+ = n*k(k because work is constant)
+ =tc= O(n)
+
+->Space Complexity:
+
+number of extra variable ,stack or data saved.
+in factorial problem although there are no direct variables created it creates a call stack by default we find the space complexty for that 
+
+space complexity = height of call stack * memory in each call
+
+ex: for factorial algorithm
+
+ int factorial(int n){
+      if(n ==0){
+            retun 1;
+      }
+      return n*factorial(n-1);
+ }
+
+here : height =n and  memory in each call is constant k
+therefore : sc =n*k
+= sc=O(n)
+
+=> problems:
+->find time and space complexity for recursive fibonacci algorithm?
+
+int fib(int n){
+      if(n=0 || n==1){
+            return n;
+      }
+      return fib(n-1)+ fib(n-2);
+}
+
+-> tc=f(4)->f(3)->f(2)->f(1)
+=2^n-1 calls *k2
+tc=O(2^n)(bad but this is for brute force fibonacci so :) 
+
+=>merge sort
+->for merge step:
+
+tc=total number of calls *work done in each call
+O(n)
+
+sc=n size temporary arrray is created so
+sc=O(n)
+
+->for merge recursive call:
+number of levels = log(n) (because half the length of the array in each call n/2)
+work in each call= o(n)
+
+tc= total number of calls *work done in each call
+tc=O(n*logn)
+
+sc=depth =log(n)
+we use temporary element that takes  so n space for temp in each
+=log(n) *n  (we only consider the bigger value so)
+sc = O(n)
+
+
+=>practical use of sc and tc
+
+in coding platforms it executes 10^8 operations for 1s
+if our code takes less that 10^8 that means the code should be optimized
+
+ex: if they gave for a question constraint as : n<=10^5
+try O(n^2)
+O(n^2)=O((10^5)^2)
+=O(10^10)-> which is more than 10^8 so TLE error and should be optimized
+ try lesser time complexity like O(nlogn) or O(log(n)) or O(n)
+
+try O(nlogn):
+O(nlogn)=10^5*5log10
+O(nlogn) = 10^5*5*0.3 < 10^8 -> so this is better and  will be accepted 
+minimum tc should be atleast  O(nlogn)  (think like O(nlogn) is mostly used in  sorting so think like some where question may uses it)
+
+
+
+
+
+
+
+
+
+
