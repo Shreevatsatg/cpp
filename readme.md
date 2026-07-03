@@ -4,14 +4,3 @@ A well-organized collection of **C++ programs**, **Data Structures & Algorithms 
 
 This repository serves as a personal learning resource and reference for mastering C++, algorithmic thinking, and coding interview preparation.
 
----
-
-## 📂 Repository Structure
-
-```text
-.
-├── Basic/
-│   └── Fundamental C++ Programs
-│
-└── DSA/
-    └── Data Structures & Algorithms
