@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+//inserting element from unsorted part to its correct position in sorted part
+
 void insertionSort(int arr[], int n)
 {
     for (int i = 1; i < n; i++)

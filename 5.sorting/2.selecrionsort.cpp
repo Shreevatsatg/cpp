@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+//selecting minimum from the array each time
+
 void selectionSort(int arr[], int n)
 {
     for (int i = 0; i < n - 1; i++)
