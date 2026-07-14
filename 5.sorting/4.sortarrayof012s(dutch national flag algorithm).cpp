@@ -1,10 +1,11 @@
-// sort array of 0's, 1's, 2's
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
 //leetcode question number 75
+// sort array of 0's, 1's, 2's
 
 void sortarray(vector<int> &nums)
 {

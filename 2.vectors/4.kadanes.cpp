@@ -2,8 +2,8 @@
 #include <vector>
 using namespace std;
 
+//problem number 53 (maximum subarray) on leetcode
 //to find the maximum sum giving subarray from a array
-//solve problem number 53 (maximum subarray) on leetcode
 int main()
 {
     //broute force method
