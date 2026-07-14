@@ -4,6 +4,8 @@
 using namespace std;
 // leetcode question no: 443
 
+
+//remember.. because we are traversing same "i" in bowth for and while loop this lgorithms time complexity is actually O(n) not O(n^2)
 int compress(vector<char> &chars)
 {
     int idx = 0; // write pointer
