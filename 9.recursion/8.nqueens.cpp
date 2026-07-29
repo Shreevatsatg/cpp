@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//leetcode problem no:51. N-Queens
+
 class Solution {
 
     bool issafe(vector<string>&board,int row,int col,int n){ //O(n)
