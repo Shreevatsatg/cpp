@@ -6,49 +6,18 @@ struct Node {
     Node* next;         // Pointer to the next node in the sequence
 
     // Constructor to easily initialize nodes
-    Node(int val) : data(val), next(nullptr){}
+    Node(int val) : data(val), next(nullptr){} /*construstor same as
+    Node(int val){
+        data=val;
+        next=nullptr;
+    }
+        */
 };
-
-void pll(Node* st){
-     while(st!=nullptr){
-        cout<<st->data<<" ";
-        st=st->next;
-    }
-}
-
-void insertback(Node*& head, int val){
-    Node* newnode= new Node(val);
-    if(head==nullptr){
-        head=newnode;
-        return;
-    }
-
-    Node* current=head;
-    while(current->next !=nullptr){
-        current=current->next;
-    }
-    current->next =newnode;
-
-}
 
 int main(){
     Node* first=new Node(10);
     Node* second=new Node(20);
 
-    first->next=second;
-    pll(first);
-    
-    insertback(first,30);
-    pll(first);
-
-    int arr[]={40,50,60,70,80,90};
-    int size=sizeof(arr)/sizeof(arr[0]);
-    for(int i=0;i<size;i++){
-        insertback(first,arr[i]);
-    }
-    pll(first);
-
-    
-
+    first->next=second; //next will always initialize as nullptr because of contrustor we must assign it to create linked list
     return 0;
 }
